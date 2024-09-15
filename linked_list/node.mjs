@@ -3,18 +3,4 @@ export class Node {
         this.value = value;
         this.nextNode = nextNode;
     }
-
-    getValue() {
-        return this.value;
-    }
-
-    // getNextNode() {
-    //     return this.nextNode;
-    // }
-
-    setNextNode(nextNode) {
-        this.nextNode = nextNode;
-    }
-
-
 }

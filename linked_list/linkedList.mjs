@@ -11,28 +11,26 @@ export class LinkedList {
         const newNode = new Node(value);
         if (this.head === null) {
             this.head = newNode;
-            this.tail = newNode;
         } else {
-            this.tail.setNextNode(newNode);
-            this.tail = newNode;
+            this.tail.nextNode = newNode;
         }
+        this.tail = newNode;
         this.size += 1;
     }
 
     prepend(value) {
         const newNode = new Node(value);
         if (this.head === null) {
-            this.head = newNode;
             this.tail = newNode;
         } else {
-            newNode.setNextNode(this.head);
-            this.head = newNode;
+            newNode.nextNode = this.head;
         }
+        this.head = newNode;
         this.size += 1;
     }
 
     at(index) {
-        if (index >= this.size) {
+        if (index >= this.size || index < 0) {
             throw new Error('Index does not exist in Linked List');
         }
 
