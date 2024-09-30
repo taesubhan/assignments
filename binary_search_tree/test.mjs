@@ -1,6 +1,6 @@
 import {Tree} from './bst.mjs';
 
-const arr = [1,5,9,14,17,21,29];
+const arr1 = [1,5,9,14,17,21,29];
 // const arr = [1]
 const tree = new Tree();
 // tree.printTree();
@@ -31,6 +31,7 @@ const call = (n)=>console.log(n.value);
 // tree.preOrder(call);
 // tree.inOrder(call);
 // tree.postOrder(call);
+
 tree.insert(101);
 tree.insert(105);
 tree.insert(107);

@@ -2,7 +2,7 @@ import {Node} from './node.mjs';
 
 export class Tree {
     constructor(arr=[]) {
-        this.root = this.buildTree(arr);
+        this.root = this.buildTree(this.cleanArr(arr));
     }
 
     prettyPrint(node, prefix = "", isLeft = true) {
@@ -41,13 +41,12 @@ export class Tree {
     buildTree(arr) {
         if (arr.length === 0) return null; 
 
-        const array = this.cleanArr(arr);
-        const mid = Math.floor(array.length/2);
+        const mid = Math.floor(arr.length/2);
 
-        const node = new Node(array[mid]);
+        const node = new Node(arr[mid]);
 
-        node.left = this.buildTree(array.slice(0, mid));
-        node.right = this.buildTree(array.slice(mid+1, array.length));
+        node.left = this.buildTree(arr.slice(0, mid));
+        node.right = this.buildTree(arr.slice(mid+1, arr.length));
 
         return node;
     }
